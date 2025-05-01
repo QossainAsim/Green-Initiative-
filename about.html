@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Green Girls</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #f4f7f6, #e8f5f2);
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      padding: 20px 40px;
+      box-shadow: 0 4px 10px rgba(0, 128, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      gap: 30px;
+    }
+
+    .logo img {
+    max-width: 100px;
+    height: 50px;
+    }
+
+
+    nav {
+        flex: 1;
+        text-align: center;
+    }
+
+    nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #007f5f;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+    nav a {
+     text-decoration: none;
+     color: #007f5f;
+     font-weight: bold;
+     font-size: 1.1rem;
+     transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+    color: #025c17;
+   }
+
+    .consult-button {
+      background-color: #007f5f;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 128, 0, 0.3);
+      cursor: pointer;
+    }
+
+    .consult-button:hover {
+    transform: scale(1.1);
+    background-color: #004d40;
+    }
+
+    .banner {
+    position: relative;
+    text-align: center;
+}
+
+   .banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+   }
+
+    .section {
+      display: flex;
+      padding: 60px 10%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .section.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .text-content {
+      flex: 1;
+    }
+
+    .text-content h2 {
+      color: #006400;
+      margin-bottom: 15px;
+    }
+
+    .text-content p {
+      margin: 0 0 10px 0;
+    }
+
+    .text-content a {
+      color: #f7c744;
+      text-decoration: none;
+    }
+
+    .image-content {
+      flex: 1;
+    }
+
+    .image-content img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 15px;
+    }
+
+    .founders {
+      display: flex;
+      justify-content: space-between;
+      padding: 60px 10%;
+      gap: 40px;
+    }
+
+    .founder-box {
+      flex: 1;
+      text-align: center;
+    }
+
+    .founder-box img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .mission {
+      text-align: center;
+      padding: 60px 10%;
+    }
+
+    .mission img {
+      width: 100%;
+      max-width: 600px;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    footer {
+      background-color: #006400;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+  <script>
+    function scrollToSupervisor() {
+      const supervisorSection = document.getElementById('supervisor');
+      supervisorSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Asim Organics</div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </nav>
+        <button class="consult-button" onclick="scrollToSupervisor()">Get Free Consultation</button>
+      </header>
+      
+  <section class="banner">
+        <img src="images/" alt="Our Herbal Products Banner">
+  </section>
+
+  <section class="section">
+    <div class="text-content">
+      <h2>Center for AI Research (CAIR) BNU</h2>
+      <p>The Center for AI Research (CAIR) at BNU is a leading graduate research lab focused on advancing AI through collaborative research. Under the leadership of 
+        Dr. Usman, Ms. Aruj, and Ms. Huda, CAIR addresses critical global challenges through innovative AI solutions.</p>
+      <p>Contact: <a href="https://ai.bnu.edu.pk/#about">ai.bnu.edu.pk</a></p>
+    </div>
+    <div class="image-content">
+      <img src="cair.jpg" alt="CAIR BNU" />
+    </div>
+  </section>
+
+  <section class="section reverse" id="supervisor">
+    <div class="image-content">
+      <img src="usman.jpg" alt="Dr. Usman Nazir" />
+    </div>
+    <div class="text-content">
+      <h2>Dr. Usman Nazir</h2>
+      <p>Supervisor -Specialization: Computer vision, remote sensing, deep learning, socio-economic indicators from remote sensing data.
+          Notable Projects: Poverty mapping, climate crisis mitigation.
+          Education: Split-site Ph.D. in Computer Science (LUMS and University of Leeds).</p>
+      <p>Assistant Professor, School of Computer and IT, BNU</p>
+      <p>Contact: <a href="mailto:usman.nazir@bnu.edu.pk">usman.nazir@bnu.edu.pk</a></p>
+    </div>
+  </section>
+
+  <section class="founders">
+    <div class="founder-box">
+      <img src="sunila.jpg" alt="Sunila" />
+      <h3>Sunila - Founder / Lead</h3>
+      <p>Passionate about innovation and research. Leads the project with vision and dedication.</p>
+      <p><a href="mailto:sunila@cairbnu.edu.pk">sunila@cairbnu.edu.pk</a></p>
+    </div>
+    <div class="founder-box">
+      <img src="awais.jpg" alt="Qossain Awais" />
+      <h3>Qossain Awais - Co-Founder</h3>
+      <p>Dedicated to AI research and project development, supporting operations and design.</p>
+      <p><a href="mailto:awais@cairbnu.edu.pk">awais@cairbnu.edu.pk</a></p>
+    </div>
+  </section>
+
+  <section class="mission">
+    <h2>Our Mission</h2>
+    <p>Our mission is to innovate with responsibility, inspire with knowledge, and impact society through the ethical use of AI technologies. We believe in empowering change through research and collaboration.</p>
+    <img src="mission.jpg" alt="Our Mission" />
+  </section>
+
+  <footer>
+   <p>Greta Thunberg's </p>
+   <p>"The eyes of all future generations are upon you," and "How dare you?"</p>
+  </footer>
+</body>
+
+</html>
