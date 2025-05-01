@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #f4f7f6, #e8f5f2);
+    color: #333;
+}
+
+/* Header (Navbar) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 20px 40px;
+    box-shadow: 0 4px 10px rgba(0, 128, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    max-width: 100px;
+    height: 50px;
+}
+
+nav {
+    flex: 1;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #007f5f;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #025c17;
+}
+
+/* Get Free Consultation Button */
+.get-consultation {
+    background-color: #007f5f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 128, 0, 0.3);
+}
+
+.get-consultation:hover {
+    transform: scale(1.1);
+    background-color: #004d40;
+}
+
+/* Banner */
+.banner {
+    position: relative;
+    text-align: center;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Products (Mission Section) */
+.products {
+    padding: 50px 20px;
+    text-align: center;
+    background: #ffffff;
+}
+
+.products h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #007f5f;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.product {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* ABOUT OUR INITIATIVE SECTION */
+.product-descriptions {
+    padding: 60px 20px;
+    background: #f0fdf6;
+}
+
+.product-descriptions h2 {
+    font-size: 2.4rem;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #007f5f;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Row Container */
+.initiative-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    gap: 30px;
+}
+
+/* Reverse row (for zig-zag) */
+.initiative-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* Image Column */
+.initiative-image {
+    flex: 1;
+    min-width: 280px;
+    max-width: 48%;
+}
+
+.initiative-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Text Column */
+.initiative-text {
+    flex: 1;
+    min-width: 280px;
+    max-width: 48%;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.initiative-text h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #025c17;
+}
+
+.initiative-text p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .initiative-row,
+    .initiative-row.reverse {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .initiative-image,
+    .initiative-text {
+        max-width: 100%;
+    }
+}
+
+
+/* Why Choose Us */
+.why-choose {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(to right, #e6f9f2, #f0fcf9);
+}
+
+.why-choose h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: #025c17;
+    letter-spacing: 1px;
+}
+
+.why-choose-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.reason {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 25px;
+    max-width: 300px;
+    flex: 1;
+    min-width: 250px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.reason:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 128, 0, 0.2);
+}
+
+.reason img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #25a56a;
+}
+
+.reason h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #006400;
+}
+
+.reason p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Our Mission in Action Section */
+.results {
+    padding: 4rem 2rem;
+    background: #f5f7fa;
+    text-align: center;
+}
+
+.results h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #222;
+}
+
+.results-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.result {
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    max-width: 320px;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.result:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+}
+
+.result img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.result h3 {
+    font-size: 1.25rem;
+    color: #007f5f;
+    margin-bottom: 1rem;
+}
+
+.result p {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    background-color: #025c17;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.contact-info, .social-icons {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.contact-info h3, .social-icons h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-info p, .footer-note {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.contact-info a, .footer-note {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.contact-info a:hover, .footer-note:hover {
+    text-decoration: underline;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+.footer-note {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .initiative-row,
+    .initiative-row.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .initiative-text {
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .get-consultation {
+        margin-top: 10px;
+    }
+
+    .results-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .result {
+        width: 90%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <img src="Images/Untitled design (4).png" alt="Asim Organics">
+        </div>
+      
+        <nav>
+          <ul>
+            <li><a href="index4.html">Home</a></li>
+            <li><a href="about2.html">About Us</a></li>
+          </ul>
+        </nav>
+      
+        <a class="get-consultation" href="about2.html">Get Free Consultation</a>
+      </header>
+
+<main>
+    <section class="banner">
+        <img src="Images/climate.png" alt="Our Herbal Products Banner">
+    </section>
+
+    <section class="products" id="products">
+        <h2>Our Mission</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="Images/women educating.jpg" alt="Women Educating on Cimate Change">
+            </div>
+            <div class="product">
+                <img src="Images/ai.jpg" alt="Ai Driven Carbon Footprint Reduction">
+            </div>
+            <div class="product">
+                <img src="Images/consultation.jpg" alt="Women providing consultations on reducing carbon Footprint">
+            </div>
+        </div>
+    </section>
+
+    <section class="product-descriptions">
+        <h2>About Our Initiatives</h2>
+      
+        <!-- First block: Image left -->
+        <div class="initiative-row">
+          <div class="initiative-image">
+            <img src="Images/green campus.jpg" alt="Initiative 1">
+          </div>
+          <div class="initiative-text">
+            <h3>Clean Energy Projects</h3>
+            <p> We aim to empower girls' schools and universities to lead the way in sustainability
+                by transitioning to solar and wind energy. Our clean energy solutions help institutions
+                reduce their carbon footprint, lower energy costs, and create greener, healthier learning
+                environments. Alongside implementation, we actively educate and engage women on climate
+                hange—fostering awareness, environmental responsibility, and carbon emission reduction,
+                starting with BNU.
+
+            </p>
+          </div>
+        </div>
+      
+        <!-- Second block: Image right -->
+        <div class="initiative-row reverse">
+          <div class="initiative-image">
+            <img src="Images/women educating.jpg" alt="Initiative 2">
+          </div>
+          <div class="initiative-text">
+            <h3>Eco-Education Campaigns</h3>
+            <p>Our school programs empower youth to fight climate change.</p>
+          </div>
+        </div>
+      
+        <!-- Third block: Image left again -->
+        <div class="initiative-row">
+          <div class="initiative-image">
+            <img src="Images/women educating.jpg" alt="Initiative 3">
+          </div>
+          <div class="initiative-text">
+            <h3>Community Tree Drives</h3>
+            <p>We plant thousands of trees to offset carbon and restore ecosystems.</p>
+          </div>
+        </div>
+      </section>
+      
+      
+
+      <section class="why-choose">
+        <h2>Global Challenges from Climate Change</h2>
+        <div class="why-choose-container">
+          
+          <div class="reason">
+            <img src="Images/download.jpeg" alt="High Carbon Emissions">
+            <h3>High Carbon Emissions</h3>
+            <p>Uncontrolled industrial and vehicular emissions are the primary drivers of climate change, leading to global warming and air pollution.</p>
+          </div>
+      
+          <div class="reason">
+            <img src="Images/download (1).jpeg" alt="Extreme Weather">
+            <h3>Extreme Weather Events</h3>
+            <p>Climate change increases the intensity and frequency of disasters like floods, hurricanes, and wildfires, threatening lives and economies.</p>
+          </div>
+      
+          <div class="reason">
+            <img src="Images/download (2).jpeg" alt="Low Education of Women">
+            <h3>Low Education of Women</h3>
+            <p>In many climate-affected regions, women lack access to education, increasing vulnerability and slowing down climate adaptation.</p>
+          </div>
+      
+          <div class="reason">
+            <img src="Images/download (3).jpeg" alt="Water Scarcity">
+            <h3>Water Scarcity</h3>
+            <p>Melting glaciers and droughts are drying up freshwater sources, causing severe shortages and increasing conflict over water.</p>
+          </div>
+      
+          <div class="reason">
+            <img src="Images/download (4).jpeg" alt="Loss of Biodiversity">
+            <h3>Loss of Biodiversity</h3>
+            <p>Rising temperatures and habitat loss are driving many species to extinction, weakening ecosystems vital for survival.</p>
+          </div>
+      
+        </div>
+      </section>
+      
+      <section class="results">
+        <h2>Our Mission in Action</h2>
+        <div class="results-container">
+          <div class="result">
+            <img src="Images/2.jpg" alt="Sustainability Impact">
+            <h3>Sustainable by Design</h3>
+            <p>We develop climate-conscious tech to help communities cut carbon emissions from day one.</p>
+          </div>
+          <div class="result">
+            <img src="Images/1.jpg" alt="AI for Climate">
+            <h3>AI With Purpose</h3>
+            <p>Our smart tools simplify climate action — making it scalable and data-driven for all.</p>
+          </div>
+          <div class="result">
+            <img src="Images/3.jpg" alt="Women Leadership">
+            <h3>Women Leading Change</h3>
+            <p>We empower women through leadership programs and climate education for global impact.</p>
+          </div>
+        </div>
+      </section>
+      
+
+</main>
+
+
+
+<footer>
+    <p>Emmanuel Macron, President of France</p>
+    <p>By polluting the oceans, not mitigating CO2 emissions and destroying our biodiversity, we are killing 
+    our planet. Let us face it, there is no planet B.</p>
+</footer>
+
+</body>
+</html>
