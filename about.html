@@ -177,6 +177,145 @@ nav ul li a {
       text-align: center;
       padding: 20px;
     }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+      .section,
+      .founders {
+        padding: 40px 5%;
+        gap: 30px;
+      }
+
+      .text-content h2 {
+        font-size: 1.5rem;
+      }
+
+      .consult-button {
+        padding: 8px 16px;
+        font-size: 0.95rem;
+      }
+
+      nav ul {
+        gap: 20px;
+      }
+
+      .image-content img {
+        max-width: 100%;
+      }
+
+      .founder-box img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 20px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding-left: 0;
+      }
+
+      .section,
+      .section.reverse,
+      .founders {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .image-content img,
+      .founder-box img {
+        max-width: 100%;
+      }
+
+      .text-content,
+      .image-content,
+      .founder-box {
+        flex: unset;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .text-content h2 {
+        font-size: 1.3rem;
+      }
+
+      nav a {
+        font-size: 1rem;
+      }
+
+      .consult-button {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+      }
+
+      header {
+        gap: 5px;
+      }
+    }
+
+
+    .hamburger {
+  font-size: 26px;
+  cursor: pointer;
+  display: none;
+  margin-left: auto;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background-color: white;
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  z-index: 999;
+  border-radius: 10px;
+}
+
+.mobile-menu a {
+  text-decoration: none;
+  color: #007f5f;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .desktop-menu,
+  .desktop-only {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .mobile-menu.active {
+    display: flex;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+
+
   </style>
   <script>
     function scrollToSupervisor() {
@@ -189,18 +328,33 @@ nav ul li a {
 <body>
     <header>
         <div class="logo">Asim Organics</div>
-        <nav>
+      
+        <!-- Hamburger Icon aligned right -->
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+      
+        <!-- Desktop Navigation -->
+        <nav class="desktop-menu">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
           </ul>
         </nav>
-        <button class="consult-button" onclick="scrollToSupervisor()">Get Free Consultation</button>
+      
+        <!-- Desktop Button -->
+        <button class="consult-button desktop-only" onclick="scrollToSupervisor()">Get Free Consultation</button>
+      
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="#" onclick="scrollToSupervisor()">Get Free Consultation</a>
+        </div>
       </header>
       
-  <section class="banner">
+      <section class="banner">
         <img src="climate.png" alt="banner">
-  </section>
+      </section>
+      
 
   <section class="section">
     <div class="text-content">
@@ -253,6 +407,22 @@ nav ul li a {
    <p>Greta Thunberg's </p>
    <p>"The eyes of all future generations are upon you," and "How dare you?"</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.toggle("active");
+    }
+  
+    function scrollToSupervisor() {
+      const section = document.getElementById("supervisor");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  </script>
+  
+  
 </body>
 
 </html>
