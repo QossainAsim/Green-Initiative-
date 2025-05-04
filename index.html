@@ -436,6 +436,56 @@ footer {
     }
 }
 
+/* Hide the hamburger icon by default */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Desktop: Show main button, hide in menu */
+.desktop-consultation {
+  display: inline-block;
+}
+
+.mobile-consultation {
+  display: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .desktop-consultation {
+    display: none;
+  }
+
+  .mobile-consultation {
+    display: block;
+  }
+}
+
+
     </style>
 </head>
 <body>
@@ -444,15 +494,21 @@ footer {
           <img src="Untitled design (4).png" alt="Website">
         </div>
       
-        <nav>
+        <div class="menu-toggle" id="mobile-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+      
+        <nav class="nav-menu">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
+            <li class="mobile-consultation"><a class="get-consultation" href="about.html">Get Free Consultation</a></li>
           </ul>
         </nav>
       
-        <a class="get-consultation" href="about.html">Get Free Consultation</a>
+        <a class="get-consultation desktop-consultation" href="about.html">Get Free Consultation</a>
       </header>
+      
 
 <main>
     <section class="banner">
@@ -589,5 +645,14 @@ footer {
     our planet. Let us face it, there is no planet B.</p>
 </footer>
 
+<script>
+    const menuToggle = document.getElementById('mobile-menu');
+    const navMenu = document.querySelector('.nav-menu');
+  
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+  
 </body>
 </html>
